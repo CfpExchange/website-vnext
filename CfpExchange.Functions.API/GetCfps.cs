@@ -12,9 +12,9 @@ using CfpExchange.Common.Helpers;
 
 namespace CfpExchange.Functions.API
 {
-	public static class GetCfpsFunction
+	public static class GetCfps
 	{
-		[FunctionName(nameof(GetCfpsFunction))]
+		[FunctionName(nameof(GetCfps))]
 		public static async Task<IActionResult> Run(
 			[HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "cfps")] HttpRequest req,
 			[Table(nameof(Cfp), Connection = "StorageConnectionString")] CloudTable table, ILogger log)
@@ -25,4 +25,3 @@ namespace CfpExchange.Functions.API
 		}
 	}
 }
-
