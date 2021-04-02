@@ -25,7 +25,7 @@ namespace CfpExchange.Common.Entities
 
 		public string EventUrl { get; set; } = string.Empty;
 
-		public string Tags { get; set; } = string.Empty;
+		public int EventType { get; set; }
 
 		public string EventImage { get; set; }
 
@@ -36,6 +36,8 @@ namespace CfpExchange.Common.Entities
 		public string EventTimezone { get; set; }
 
 		public string EventTwitterHandle { get; set; }
+
+		public string Tags { get; set; } = string.Empty;
 
 		public DateTime StartDate { get; set; }
 
@@ -60,7 +62,5 @@ namespace CfpExchange.Common.Entities
 		public string SubmittedBy { get; set; }
 
 		public string Slug { get; set; }
-
-		public bool IsVirtual { get; set; }
 	}
 }
