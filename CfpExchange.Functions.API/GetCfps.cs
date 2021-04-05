@@ -1,14 +1,14 @@
 using System.Threading.Tasks;
 
+using CfpExchange.Common.Entities;
+using CfpExchange.Common.Helpers;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Cosmos.Table;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
-
-using CfpExchange.Common.Entities;
-using CfpExchange.Common.Helpers;
 
 namespace CfpExchange.Functions.API
 {
