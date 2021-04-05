@@ -10,6 +10,6 @@ export class GithubService {
   constructor(private httpClient: HttpClient) { }
 
   public getContributors() {
-    return this.httpClient.get<Contributor[]>('https://api.github.com/repos/cfpexchange/cfpexchange/contributors')
+    return this.httpClient.get<Contributor[]>('https://api.github.com/repos/cfpexchange/website-vnext/contributors')
   }
 }
