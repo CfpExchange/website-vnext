@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
+import { Contributor } from 'src/app/models/contributor';
+import { GithubService } from 'src/app/services/github.service';
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -7,9 +12,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+public contributors$: Observable<Contributor[]> | undefined;
+
+  constructor(private githubService: GithubService) { }
 
   ngOnInit(): void {
+    this.contributors$ = this.githubService.getContributors();
   }
-
 }
