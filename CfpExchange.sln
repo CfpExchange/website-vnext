@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CfpExchange.Functions.API",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CfpExchange.Common", "CfpExchange.Common\CfpExchange.Common.csproj", "{5AC082AF-6D7D-48FD-B185-F77408027CFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CfpExchange.Functions.BackOffice", "CfpExchange.Functions.BackOffice\CfpExchange.Functions.BackOffice.csproj", "{29000F7A-CE2E-4AB1-A30D-AB1E36F61AFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CfpExchange.Functions.BackOffice", "CfpExchange.Functions.BackOffice\CfpExchange.Functions.BackOffice.csproj", "{29000F7A-CE2E-4AB1-A30D-AB1E36F61AFA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B82E570-0B01-4555-86D6-E9A29BD79DE6}"
 	ProjectSection(SolutionItems) = preProject
