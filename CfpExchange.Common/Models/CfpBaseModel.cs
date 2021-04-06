@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace CfpExchange.Common.Models
 {
@@ -20,15 +20,8 @@ namespace CfpExchange.Common.Models
 
 		public string EventImage
 		{
-			get
-			{
-				return string.IsNullOrWhiteSpace(_eventImage) ? Constants.NO_EVENT_IMAGE_URL : _eventImage;
-			}
-
-			set
-			{
-				_eventImage = value;
-			}
+			get => string.IsNullOrWhiteSpace(_eventImage) ? Constants.NO_EVENT_IMAGE_URL : _eventImage;
+			set => _eventImage = value;
 		}
 
 		public DateTime EventStartDate { get; set; }

@@ -1,7 +1,8 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using CfpExchange.Common.Entities;
-using CfpExchange.Common.Helpers;
+using CfpExchange.Common.Models;
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,12 @@ namespace CfpExchange.Functions.API
 			[HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "cfps")] HttpRequest req,
 			[Table(nameof(Cfp), Connection = "StorageConnectionString")] CloudTable table, ILogger log)
 		{
-			var entities = await TableStorageHelper.GetEntitiesFromTableAsync<Cfp>(table);
+			//var entities = await TableStorageHelper.GetEntitiesFromTableAsync<Cfp>(table);
+
+			var entities = new List<CfpBaseModel>();
+			entities.Add(new CfpBaseModel { Slug = "future-tech-2021", EventName = "Future Tech 2021" });
+			entities.Add(new CfpBaseModel { Slug = "techorama-2021", EventName = "Techorama 2021" });
+			entities.Add(new CfpBaseModel { Slug = "azure-lowlands", EventName = "Azure Lowlands", EventImage = "https://www.azurelowlands.com/wp-content/uploads/2018/09/Header.jpg" });
 
 			return new OkObjectResult(entities);
 		}
