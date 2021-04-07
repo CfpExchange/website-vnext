@@ -5,6 +5,7 @@ import { AboutComponent } from './components/about/about.component';
 import { CfpComponent } from './components/cfp/cfp.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
+import { SubmitComponent } from './components/submit/submit.component';
 
 const routes: Routes = [  {
   path: '',
@@ -15,6 +16,9 @@ const routes: Routes = [  {
 }, {
   path: 'contact',
   component: ContactComponent,
+}, {
+  path: 'submit',
+  component: SubmitComponent,
 }, {
   path: 'about',
   component: AboutComponent,

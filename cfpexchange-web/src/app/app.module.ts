@@ -11,6 +11,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { CfpComponent } from './components/cfp/cfp.component';
+import { SubmitComponent } from './components/submit/submit.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CfpComponent } from './components/cfp/cfp.component';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    CfpComponent
+    CfpComponent,
+    SubmitComponent
   ],
   imports: [
     AppRoutingModule,
