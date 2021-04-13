@@ -1,0 +1,15 @@
+@import '../../../variables';
+
+footer {
+	color: $cfpexchange-text-muted;
+	z-index: 1101;
+	font-size: 0.8rem;
+
+	a {
+		color: $cfpexchange-text-links;
+	}
+
+	.fa-heart {
+		color: red;
+	}
+}
