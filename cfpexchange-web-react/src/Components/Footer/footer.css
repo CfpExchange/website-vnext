@@ -1,0 +1,13 @@
+footer {
+	color: #999;
+	z-index: 1101;
+	font-size: 0.8rem;
+}
+
+a {
+	color: #CCC;
+}
+
+.fa-heart {
+	color: red;
+}
