@@ -1,5 +1,4 @@
 using System;
-using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -9,12 +8,13 @@ using Microsoft.Extensions.Logging;
 using CfpExchange.Common.Models;
 
 using RvdB.Scrapionize.Interfaces;
+using RvdB.Scrapionize.Models;
 
 namespace CfpExchange.Functions.API
 {
 	public class PopulateCfp
 	{
-		private IScraper _scraper;
+		private readonly IScraper _scraper;
 
 		public PopulateCfp(IScraper scraper)
 		{
@@ -22,16 +22,15 @@ namespace CfpExchange.Functions.API
 		}
 
 		[FunctionName(nameof(PopulateCfp))]
-		public async Task<IActionResult> Run(
-			[HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] PopulateCfpModel model,
-			ILogger log)
+		public IActionResult Run(
+			[HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] PopulateCfpModel model)
 		{
 			if (model == null)
 			{
 				return new BadRequestResult();
 			}
 
-			var sessionizeData = _scraper.Scrape(new Uri(model.CfpUrl));
+			SessionizeData sessionizeData = _scraper.Scrape(new Uri(model.CfpUrl));
 			var cfpModel = new CfpBaseModel
 			{
 				CfpUrl = model.CfpUrl,

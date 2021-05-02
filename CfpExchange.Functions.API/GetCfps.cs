@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 using CfpExchange.Common.Entities;
 using CfpExchange.Common.Models;
@@ -16,16 +15,18 @@ namespace CfpExchange.Functions.API
 	public static class GetCfps
 	{
 		[FunctionName(nameof(GetCfps))]
-		public static async Task<IActionResult> Run(
+		public static IActionResult Run(
 			[HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "cfps")] HttpRequest req,
 			[Table(nameof(Cfp), Connection = "StorageConnectionString")] CloudTable table, ILogger log)
 		{
 			//var entities = await TableStorageHelper.GetEntitiesFromTableAsync<Cfp>(table);
 
-			var entities = new List<CfpBaseModel>();
-			entities.Add(new CfpBaseModel { Slug = "future-tech-2021", EventName = "Future Tech 2021" });
-			entities.Add(new CfpBaseModel { Slug = "techorama-2021", EventName = "Techorama 2021" });
-			entities.Add(new CfpBaseModel { Slug = "azure-lowlands", EventName = "Azure Lowlands", EventImage = "https://www.azurelowlands.com/wp-content/uploads/2018/09/Header.jpg" });
+			var entities = new List<CfpBaseModel>
+			{
+				new CfpBaseModel { Slug = "future-tech-2021", EventName = "Future Tech 2021" },
+				new CfpBaseModel { Slug = "techorama-2021", EventName = "Techorama 2021" },
+				new CfpBaseModel { Slug = "azure-lowlands", EventName = "Azure Lowlands", EventImage = "https://www.azurelowlands.com/wp-content/uploads/2018/09/Header.jpg" }
+			};
 
 			return new OkObjectResult(entities);
 		}
