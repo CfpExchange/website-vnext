@@ -4,7 +4,7 @@ namespace CfpExchange.Common.Models
 {
 	public class CfpBaseModel
 	{
-		public Guid Id { get; set; }
+		public string Slug { get; set; }
 
 		public string EventName { get; set; }
 
@@ -30,13 +30,13 @@ namespace CfpExchange.Common.Models
 
 		public DateTime CfpEndDate { get; set; }
 
+		public DateTime CfpStartDate { get; set; }
+
 		public bool? ProvidesAccommodation { get; set; }
 
 		public bool? ProvidesTravelAssistance { get; set; }
 
 		public string CfpUrl { get; set; } = string.Empty;
-
-		public string Slug { get; set; }
 
 		public bool IsVirtual { get; set; }
 
