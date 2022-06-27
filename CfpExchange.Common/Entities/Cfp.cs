@@ -1,16 +1,27 @@
-﻿using System;
+using Azure;
+using Azure.Data.Tables;
 
-using Microsoft.Azure.Cosmos.Table;
+using System;
+using System.Runtime.Serialization;
 
 namespace CfpExchange.Common.Entities
 {
-	public class Cfp : TableEntity
+	public class Cfp : ITableEntity
 	{
-		[IgnoreProperty]
+		#region ITableEntity properties
+
+		public string PartitionKey { get; set; }
+		public string RowKey { get; set; }
+		public DateTimeOffset? Timestamp { get; set; }
+		public ETag ETag { get; set; }
+
+		#endregion
+
+		[IgnoreDataMember]
 		public Guid Id
 		{
-			get => Guid.Parse(RowKey); 
-			set => RowKey = value.ToString(); 
+			get => Guid.Parse(RowKey);
+			set => RowKey = value.ToString();
 		}
 
 		public string EventName { get; set; }
