@@ -9,9 +9,31 @@
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
     <link href="CfpExchange.Web.Blazor.styles.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" rel="stylesheet"
+          integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid justify-content-center">
+                <a class="navbar-brand ms-2" href="/">CFP E<img src="/images/exchange-small.png" class="brand-img" alt="x">change</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/cfps">CFPs</a>
+                        <a class="nav-link" href="/contact">Contact</a>
+                        <a class="nav-link" href="/about">About</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <div id="app">Loading...</div>
 
     <div id="blazor-error-ui">
@@ -19,7 +41,42 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
+
+    <footer class="fixed-bottom bg-dark py-3">
+        <div class="container">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-3 text-start">
+                        <h5>Follow us!</h5>
+                        <a href="https://twitter.com/cfp_exchange" target="_blank" rel="noopener">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a><br>
+                        <a href="https://github.com/cfpexchange/website-vnext" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> GitHub
+                        </a><br>
+                        <a href="https://cfp.exchange/api/rss" target="_blank" rel="noopener">
+                            <i class="fas fa-rss"></i> RSS
+                            feed
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <h5>About</h5>
+                        CFP Exchange tries to gather current CFPs from events around the world by crowd-sourcing them from
+                        the community.
+                    </div>
+                    <div class="col-3 text-end">
+                        <h5>Submit</h5>
+                        <a routerLink="/submit" class="btn btn-light"><i class="far fa-paper-plane"></i> Submit CFP</a>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        made with <i class="fas fa-heart"></i> &mdash; copyright &copy; 2021 - 2022 <a href="/">CFP Exchange - Crowd-sourced CFP list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>
-
 </html>
