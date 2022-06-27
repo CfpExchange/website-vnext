@@ -1,0 +1,45 @@
+﻿@font-face {
+  font-family: "Varela Round";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Varela Round Regular"), local("VarelaRound-Regular"), url(https://fonts.gstatic.com/s/varelaround/v9/w8gdH283Tvk__Lua32TysjIfp8uK.ttf) format("truetype");
+}
+body {
+  margin: 120px 0;
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 0.5px;
+  color: #999;
+  background-color: #0D1117;
+}
+
+.navbar-brand {
+  font-size: 1.3rem;
+}
+
+.brand-img {
+  margin: 0 -8px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+}
+
+.ng-valid[required], .ng-valid.required {
+  border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442 !important;
+}
+
+footer {
+  color: #666;
+  z-index: 1101;
+  font-size: 0.8rem;
+}
+footer a {
+  color: #444;
+}
+footer .fa-heart {
+  color: red;
+}
